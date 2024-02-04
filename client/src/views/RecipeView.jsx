@@ -12,6 +12,10 @@ function RecipeView(props) {
     const [recipeIngredientsArray, setRecipeIngredientsArray] = useState([]);
     const [recipeStepsArray, setRecipeStepsArray] = useState([]);
 
+    const handleEditClick = () => {
+        window.location = `/edit-recipe/${recipeid}`;
+    }
+
     const handleFirstDelClick = (e) => {
         let deleteConfirm = document.getElementById(recipeid);
         e.target.style.display = "none";
@@ -63,6 +67,7 @@ function RecipeView(props) {
                     </li>
                 ))}
             </ol>
+            <button onClick={handleEditClick} className="delete-recipe-btn" id="edit-button">Edit Recipe</button>
             <button onClick={handleFirstDelClick} className="delete-recipe-btn" id="first-delete-btn">Delete Recipe</button>
             <button onClick={handleDeleteClick} className="delete-recipe-btn confirm-delete-btn" id={recipeid}>Confirm</button>
         </div>

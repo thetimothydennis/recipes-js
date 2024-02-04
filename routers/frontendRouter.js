@@ -13,5 +13,6 @@ router.use(express.static(join(__dirname, "..", "client", "dist")));
 router.get("/", appRoute)
 router.get("/add-recipe", appRoute)
 router.get("/recipes/:recipeid", appRoute)
+router.get("/edit-recipe/:recipeid", appRoute)
 
 export default router;
