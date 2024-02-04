@@ -80,3 +80,10 @@ input[type=submit]:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.recipe-card {
+    width: 10rem;
+}
+#recipe-cards-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
