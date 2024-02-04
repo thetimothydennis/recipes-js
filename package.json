@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon server.js"
+    "serve": "nodemon server.js",
+    "setup": "bash ./scripts/setup.sh",
+    "rebuild": "bash ./scripts/rebuild.sh"
   },
   "keywords": [],
   "author": "",
