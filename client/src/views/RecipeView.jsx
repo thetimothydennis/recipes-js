@@ -28,8 +28,6 @@ function RecipeView(props) {
         e.target.onclick = handleDeleteClick;
     }
 
-
-
     useEffect(() => {
         getRecipe(recipeid)
     },[])
@@ -52,27 +50,30 @@ function RecipeView(props) {
         setRecipeStepsArray(recipeSteps.split("\r\n"))
     }, [recipeSteps])
 
-    return (
-        <div id="recipe-container">
-            <h1>{recipeName}</h1>
-            <a href="/"><button>Return to Index</button></a>
-            <h3>{recipeDescription}</h3>
-            <h6>Time: {recipeTime}</h6>
-            <ul id="ingredients-list" className="ingredients-list">{recipeIngredientsArray.map((ingredient, x) => (
-                <li className="ingredients-list-item" key={x}>
-                    {ingredient}
-                </li>
-            ))}</ul>
-            <ol id="recipe-steps-list" className="recipe-steps-list">
-                {recipeStepsArray.map((step, x) => (
-                    <li className="recipe-steps-list-item" key={x}>
-                        {step}
+    return ( 
+        <div>
+            { recipeSteps ? 
+            <div id="recipe-container">
+                <h1>{recipeName}</h1>
+                <a href="/"><button>Return to Index</button></a>
+                <h3>{recipeDescription}</h3>
+                <h6>Time: {recipeTime}</h6>
+                <ul id="ingredients-list" className="ingredients-list">{recipeIngredientsArray.map((ingredient, x) => (
+                    <li className="ingredients-list-item" key={x}>
+                        {ingredient}
                     </li>
-                ))}
-            </ol>
-            <button onClick={handleEditClick} className="delete-recipe-btn" id="edit-button">Edit Recipe</button>
-            <button onClick={handleFirstDelClick} className="delete-recipe-btn" id={recipeid}>Delete Recipe</button>
-            <button onClick={handleDeleteClick} className="delete-recipe-btn confirm-delete-btn" id={recipeid}>Confirm</button>
+                ))}</ul>
+                <ol id="recipe-steps-list" className="recipe-steps-list">
+                    {recipeStepsArray.map((step, x) => (
+                        <li className="recipe-steps-list-item" key={x}>
+                            {step}
+                        </li>
+                    ))}
+                </ol>
+                <button onClick={handleEditClick} className="delete-recipe-btn" id="edit-button">Edit Recipe</button>
+                <button onClick={handleFirstDelClick} className="delete-recipe-btn" id={recipeid}>Delete Recipe</button>
+                <button onClick={handleDeleteClick} className="delete-recipe-btn confirm-delete-btn" id={recipeid}>Confirm</button>
+            </div> : <></> }
         </div>
     )
 }
