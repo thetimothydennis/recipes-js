@@ -1,9 +1,13 @@
 #recipe-container {
     background-color: #111;
     border-radius: 1rem;
-    padding: 0.25rem 4rem;
-    margin: 0.5rem;
+    padding: 2rem 4rem;
+    margin: 2rem;
 }
 #ingredients-list, #recipe-steps-list {
     text-align: left;
+}
+.confirm-delete-btn {
+    background-color: #a00;
+    display: none;
 }

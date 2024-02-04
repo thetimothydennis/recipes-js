@@ -12,6 +12,12 @@ function RecipeView(props) {
     const [recipeIngredientsArray, setRecipeIngredientsArray] = useState([]);
     const [recipeStepsArray, setRecipeStepsArray] = useState([]);
 
+    const handleFirstDelClick = (e) => {
+        let deleteConfirm = document.getElementById(recipeid);
+        e.target.style.display = "none";
+        deleteConfirm.style.display = "block";
+    }
+
     const handleDeleteClick = async (e) => {
         await axios.delete(`/api/recipes/${e.target.id}`);
         window.location = "/";
@@ -57,7 +63,8 @@ function RecipeView(props) {
                     </li>
                 ))}
             </ol>
-            <button onClick={handleDeleteClick} className="delete-recipe-btn" id={recipeid}>Delete Recipe</button>
+            <button onClick={handleFirstDelClick} className="delete-recipe-btn" id="first-delete-btn">Delete Recipe</button>
+            <button onClick={handleDeleteClick} className="delete-recipe-btn confirm-delete-btn" id={recipeid}>Confirm</button>
         </div>
     )
 }

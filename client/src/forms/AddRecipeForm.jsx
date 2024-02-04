@@ -8,7 +8,7 @@ import "../stylesheets/forms.css";
 
 function AddRecipeForm () {
     return (
-        <form method="POST" action="/api/recipes/add-recipe">
+        <form id="add-recipe-form" className="recipe-form" method="POST" action="/api/recipes/add-recipe">
             <RecipeName />
             <RecipeDescription />
             <RecipeTime />

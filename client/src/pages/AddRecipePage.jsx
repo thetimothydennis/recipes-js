@@ -2,7 +2,9 @@ import AddRecipeView from "../views/AddRecipeView";
 
 function AddRecipePage() {
     return (
-        <AddRecipeView />
+        <div>
+            <AddRecipeView />
+        </div>
     )
 }
 

@@ -4,11 +4,15 @@
 }
 .form-field-label {
     margin: 0.25rem auto;
+    font-weight: 800;
 }
 .form-field textarea, .form-field input {
     width: 50vw;
+    margin-bottom: 0.5rem;
 }
-.form-field input[type=submit] {
-    width: 20vw;
-    margin: 1rem auto;
+.recipe-form {
+    background-color: #aaa;
+    color: #000;
+    border-radius: 1rem;
+    padding: 3rem;
 }
