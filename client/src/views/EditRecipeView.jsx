@@ -5,10 +5,15 @@ function EditRecipeView({recipeid}) {
         window.location = "/";
     }
 
+    const handleBackClick = () => {
+        window.location = `/recipes/${recipeid}`;
+    }
+
     return (
         <div id="add-recipe-view">
             <h2>Edit Recipe</h2>
             <button onClick={handleReturnClick}>Return to Index</button>
+            <button onClick={handleBackClick}>Return to Recipe</button>
             <EditRecipeForm {...{recipeid}} />
         </div>
     )

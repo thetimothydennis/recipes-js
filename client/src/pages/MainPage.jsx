@@ -26,8 +26,8 @@ function MainPage() {
             <div id="recipe-cards-container" className="recipe-cards-container">
             {recipes.map((recipe, x) => (
                 <div onClick={handleClick} id={recipe._id} className="recipe-card" key={x}>
-                    <p className="recipe-card-item" id={recipe._id}>{recipe.name}</p>
-                    <p className="recipe-card-item" id={recipe._id}>{recipe.description}</p>
+                    <h3 className="recipe-card-item recipe-card-title" id={recipe._id}>{recipe.name}</h3>
+                    <p className="recipe-card-item recipe-card-description" id={recipe._id}>{recipe.description}</p>
                 </div>
             ))}
             </div>

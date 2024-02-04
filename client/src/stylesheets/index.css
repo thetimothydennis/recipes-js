@@ -48,7 +48,7 @@ input[type=submit] {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  margin: 0.5rem auto;
+  margin: 0.5rem 0.5rem;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -80,10 +80,17 @@ input[type=submit]:focus-visible {
     background-color: #f9f9f9;
   }
 }
-.recipe-card {
-    width: 10rem;
-}
-#recipe-cards-container {
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+@media screen and (max-width: 767px) {
+  #root {
+    padding: 0.25rem;
+    font-size: 20px;
+  }
+
+  button, 
+  input[type=submit] {
+    padding: 1rem 1.2rem;
+    font-size: 16px;
+    max-width: 50vw;
+  }
 }

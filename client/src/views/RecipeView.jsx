@@ -16,16 +16,19 @@ function RecipeView(props) {
         window.location = `/edit-recipe/${recipeid}`;
     }
 
-    const handleFirstDelClick = (e) => {
-        let deleteConfirm = document.getElementById(recipeid);
-        e.target.style.display = "none";
-        deleteConfirm.style.display = "block";
-    }
-
     const handleDeleteClick = async (e) => {
         await axios.delete(`/api/recipes/${e.target.id}`);
         window.location = "/";
     }
+
+    const handleFirstDelClick = (e) => {
+        e.target.style["background-color"] = "red";
+        e.target.style["transition-property"] = "background-color";
+        e.target.style["transition-duration"] = "500mx";
+        e.target.onclick = handleDeleteClick;
+    }
+
+
 
     useEffect(() => {
         getRecipe(recipeid)
@@ -68,7 +71,7 @@ function RecipeView(props) {
                 ))}
             </ol>
             <button onClick={handleEditClick} className="delete-recipe-btn" id="edit-button">Edit Recipe</button>
-            <button onClick={handleFirstDelClick} className="delete-recipe-btn" id="first-delete-btn">Delete Recipe</button>
+            <button onClick={handleFirstDelClick} className="delete-recipe-btn" id={recipeid}>Delete Recipe</button>
             <button onClick={handleDeleteClick} className="delete-recipe-btn confirm-delete-btn" id={recipeid}>Confirm</button>
         </div>
     )

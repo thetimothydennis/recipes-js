@@ -13,7 +13,6 @@ function RecipePage() {
         setRecipe(recipeData.data)
     }
 
-
     return (
         <>
             <RecipeView {...{getRecipe, recipeid, recipe}}/>     

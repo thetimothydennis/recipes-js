@@ -4,8 +4,25 @@
     padding: 0.5rem 1rem;
     max-width: 15rem;
     margin: 0.5rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 #recipe-cards-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.recipe-card-title {
+    min-height: 3.5rem;
+}
+
+@media screen and (max-width: 767px) {
+    .recipe-card {
+        max-width: none;
+        width: 70vw;
+    }
 }

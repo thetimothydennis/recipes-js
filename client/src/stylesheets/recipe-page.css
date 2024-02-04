@@ -11,3 +11,15 @@
     background-color: #a00;
     display: none;
 }
+
+@media screen and (max-width: 767px) {
+    div#recipe-container {
+        padding: 0.25rem;
+        margin: 0;
+    }
+    h6 {
+        font-size: 1rem;
+        margin: 0;
+        font-style: italic;
+    }
+}
