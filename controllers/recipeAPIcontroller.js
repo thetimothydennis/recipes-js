@@ -5,7 +5,7 @@ export const addRecipe = async (req, res) => {
     const { recipeName, recipeDescription, recipeTime, recipeIngredients, recipeSteps } = req.body;
     const recipeObj = {name: recipeName, description: recipeDescription, time: recipeTime, ingredients: recipeIngredients, steps: recipeSteps };
     const insertTheRecipe = await recipeAPI.addARecipe(recipeObj);
-    res.send(insertTheRecipe);
+    res.redirect("/");
 }
 
 export const getRecipes = async (req, res) => {
@@ -18,4 +18,10 @@ export const getRecipe = async (req, res) => {
     const recipeId = req.params.recipeid;
     const getTheRecipe = await recipeAPI.getARecipe(recipeId);
     res.send(getTheRecipe)
+}
+
+export const deleteRecipe = async (req, res) => {
+    const recipeId = req.params.recipeid;
+    const deleteTheRecipe = await recipeAPI.deleteARecipe(recipeId);
+    res.send(deleteTheRecipe);
 }

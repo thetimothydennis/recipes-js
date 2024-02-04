@@ -20,6 +20,16 @@ export const getARecipe = async (recipeId) => {
     }
 }
 
+export const deleteARecipe = async (recipeId) => {
+    try {
+        const recipe = await Recipe.findByIdAndDelete(recipeId);
+        return recipe;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+}
+
 export const addARecipe = async (recipeObj) => {
     try {
         const { name, description, time, ingredients, steps } = recipeObj;

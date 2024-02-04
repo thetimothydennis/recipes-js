@@ -11,5 +11,6 @@ router.route("/api/recipes")
 
 router.route("/api/recipes/:recipeid")
     .get(recipesAPICtrl.getRecipe)
-
+    .delete(recipesAPICtrl.deleteRecipe)
+    
 export default router;
