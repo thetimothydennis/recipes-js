@@ -4,7 +4,6 @@ import "../stylesheets/recipe-card.css";
 
 function MainPage() {
     const [recipes, setRecipes] = useState([]);
-    const [recipe, setRecipe] = useState({});
 
     const getRecipes = async () => {
         const recipes = await axios.get(`/api/recipes`);
@@ -16,19 +15,9 @@ function MainPage() {
         window.location = `/recipes/${recipeId}`;
     }
 
-    const handleDeleteClick = async (e) => {
-        const recipeId = e.target.id;
-        await axios.delete(`/api/recipes/${recipeId}`);
-        getRecipes();
-    }
-
     useEffect(() => {
         getRecipes();
     }, [])
-
-    useEffect(() => {
-        console.log(recipe)
-    }, [recipe])
 
     return (
         <div>
@@ -39,7 +28,6 @@ function MainPage() {
                 <div onClick={handleClick} id={recipe._id} className="recipe-card" key={x}>
                     <p className="recipe-card-item" id={recipe._id}>{recipe.name}</p>
                     <p className="recipe-card-item" id={recipe._id}>{recipe.description}</p>
-                    <button id={recipe._id} onClick={handleDeleteClick}>Delete Recipe</button>
                 </div>
             ))}
             </div>

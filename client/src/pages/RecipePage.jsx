@@ -1,7 +1,8 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RecipeView from "../views/RecipeView";
 import axios from "axios";
+import "../stylesheets/recipe-page.css";
 
 function RecipePage() {
     const { recipeid } = useParams();
