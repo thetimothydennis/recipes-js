@@ -25,3 +25,12 @@ export const deleteRecipe = async (req, res) => {
     const deleteTheRecipe = await recipeAPI.deleteARecipe(recipeId);
     res.send(deleteTheRecipe);
 }
+
+export const editRecipe = async (req, res) => {
+    const recipeId = req.params.recipeid;
+    console.log(req.body)
+    const { recipeName, recipeDescription, recipeTime, recipeIngredients, recipeSteps } = req.body;
+    const recipeObj = {name: recipeName, description: recipeDescription, time: recipeTime, ingredients: recipeIngredients, steps: recipeSteps };
+    const editRecipe = await recipeAPI.editARecipe(recipeId, recipeObj);
+    res.send(editRecipe);
+}

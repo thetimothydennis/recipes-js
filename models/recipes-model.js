@@ -47,3 +47,14 @@ export const addARecipe = async (recipeObj) => {
         return err.message;
     }
 }
+
+export const editARecipe = async (recipeId, recipeObj) => {
+    try {
+        const recipeToUpdate = await Recipe.findByIdAndUpdate(recipeId, recipeObj);
+        console.log(recipeToUpdate);
+        return recipeToUpdate;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+}
