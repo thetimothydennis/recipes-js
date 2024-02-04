@@ -11,5 +11,6 @@ const router = express.Router();
 router.use(express.static(join(__dirname, "..", "client", "dist")));
 
 router.get("/", appRoute)
+router.get("/add-recipe", appRoute)
 
 export default router;

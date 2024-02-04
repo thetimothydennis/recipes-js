@@ -1,8 +1,8 @@
-import AddRecipeView from "../views/AddRecipeView";
-
 function MainPage() {
     return (
-        <AddRecipeView />
+        <div>
+            <h2>All Recipes</h2>
+        </div>
     )
 }
 
