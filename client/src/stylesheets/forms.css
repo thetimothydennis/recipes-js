@@ -16,3 +16,33 @@
     border-radius: 1rem;
     padding: 1rem 3rem;
 }
+#recipe-types-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 50vw;
+    justify-content: center;
+}
+#recipe-type-field {
+    background-color: #bbb;
+    border-radius: 2rem;
+    margin: 1rem auto;
+}
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ccc;
+    max-width: 15rem;
+    border-radius: 2rem;
+    margin: 0.5rem 0.25rem;
+}
+.type-input {
+    max-width: 10rem;
+}
+.type-label {
+    max-width: 12rem;
+}
+
+#form-submit {
+    margin: 0 auto;
+}

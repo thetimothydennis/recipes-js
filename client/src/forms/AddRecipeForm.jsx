@@ -5,6 +5,7 @@ import RecipeIngredients from "./formComponents/RecipeIngredients";
 import RecipeSteps from "./formComponents/RecipeSteps";
 import SubmitButton from "./formComponents/SubmitButton";
 import "../stylesheets/forms.css";
+import RecipeType from "./formComponents/RecipeType";
 
 function AddRecipeForm () {
     return (
@@ -14,6 +15,7 @@ function AddRecipeForm () {
             <RecipeTime />
             <RecipeIngredients />
             <RecipeSteps />
+            <RecipeType />
             <SubmitButton />
         </form>
     )

@@ -7,6 +7,7 @@ import RecipeIngredients from "./formComponents/RecipeIngredients";
 import RecipeSteps from "./formComponents/RecipeSteps";
 import SubmitButton from "./formComponents/SubmitButton";
 import "../stylesheets/forms.css";
+import RecipeType from "./formComponents/RecipeType";
 
 function EditRecipeForm ({recipeid}) {
     const [recipeName, setRecipeName] = useState("");
@@ -37,6 +38,7 @@ function EditRecipeForm ({recipeid}) {
             <RecipeTime {...{recipeTime, setRecipeDescription}} />
             <RecipeIngredients {...{recipeIngredients, setRecipeIngredients}} />
             <RecipeSteps {...{recipeSteps, setRecipeSteps}} />
+            <RecipeType />
             <SubmitButton />
         </form>
     )
