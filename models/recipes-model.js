@@ -32,13 +32,14 @@ export const deleteARecipe = async (recipeId) => {
 
 export const addARecipe = async (recipeObj) => {
     try {
-        const { name, description, time, ingredients, steps } = recipeObj;
+        const { name, description, time, ingredients, steps, type } = recipeObj;
         const insertRecipe = new Recipe({
             name,
             description,
             time,
             ingredients,
-            steps
+            steps,
+            type
         })
         const saveRecipeToDb = await insertRecipe.save();
         return saveRecipeToDb;

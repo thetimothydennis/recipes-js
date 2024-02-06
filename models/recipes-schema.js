@@ -27,7 +27,8 @@ const RecipeSchema = new Schema({
     steps: {
         type: String,
         required: true
-    }
+    },
+    type: []
 })
 
 export const Recipe = connection.model("Recipes", RecipeSchema);

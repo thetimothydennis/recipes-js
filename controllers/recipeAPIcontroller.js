@@ -1,9 +1,66 @@
 import * as recipeAPI from "../models/recipes-model.js";
 
+function typeSelector(requestObj) {
+    let typeArray = [];
+    if (requestObj.breakfast) {
+        typeArray.push("breakfast");
+    }
+    if (requestObj.appetizer) {
+        typeArray.push("appetizer")
+    }
+    if (requestObj.soup) {
+        typeArray.push("soup")
+    }
+    if (requestObj.entree) {
+        typeArray.push("entree")
+    }
+    if (requestObj.side) {
+        typeArray.push("side")
+    }
+    if (requestObj.beverage) {
+        typeArray.push("beverage")
+    }
+    if (requestObj. dessert) {
+        typeArray.push("dessert")
+    }
+    if (requestObj.salad) {
+        typeArray.push("salad")
+    }
+    if (requestObj.sauces) {
+        typeArray.push("sauces")
+    }
+    if (requestObj.breadsPastas) {
+        typeArray.push("breadsPastas")
+    }
+    if (requestObj.meats) {
+        typeArray.push("meats")
+    }
+    if (requestObj.ingredientPrep) {
+        typeArray.push("ingredientPrep")
+    }
+    return typeArray;
+}
+
 export const addRecipe = async (req, res) => {
     try {
-        const { recipeName, recipeDescription, recipeTime, recipeIngredients, recipeSteps } = req.body;
-        const recipeObj = {name: recipeName, description: recipeDescription, time: recipeTime, ingredients: recipeIngredients, steps: recipeSteps };
+        let typesArray = typeSelector(req.body);
+        const { 
+            recipeName, 
+            recipeDescription, 
+            recipeTime, 
+            recipeIngredients, 
+            recipeSteps 
+        } = req.body;
+
+        const recipeObj = {
+            name: recipeName, 
+            description: recipeDescription, 
+            time: recipeTime, 
+            ingredients: 
+            recipeIngredients, 
+            steps: recipeSteps, 
+            type: typesArray 
+        };
         await recipeAPI.addARecipe(recipeObj);
     } catch (err) {
         console.log(err);
@@ -45,9 +102,23 @@ export const deleteRecipe = async (req, res) => {
 
 export const editRecipe = async (req, res) => {
     try {
+        let typesArray = typeSelector(req.body);
         const recipeId = req.params.recipeid;
-        const { recipeName, recipeDescription, recipeTime, recipeIngredients, recipeSteps } = req.body;
-        const recipeObj = {name: recipeName, description: recipeDescription, time: recipeTime, ingredients: recipeIngredients, steps: recipeSteps };
+        const { 
+            recipeName, 
+            recipeDescription, 
+            recipeTime, 
+            recipeIngredients, 
+            recipeSteps 
+        } = req.body;
+        const recipeObj = {
+            name: recipeName, 
+            description: recipeDescription, 
+            time: recipeTime, 
+            ingredients: recipeIngredients, 
+            steps: recipeSteps,
+            type: typesArray
+        };
         await recipeAPI.editARecipe(recipeId, recipeObj);
         res.redirect(`/recipes/${recipeId}`);
     } catch (err) {
