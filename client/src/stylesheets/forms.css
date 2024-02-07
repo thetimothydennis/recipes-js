@@ -42,7 +42,18 @@
 .type-label {
     max-width: 12rem;
 }
-
+#find-recipe-types-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 60vw;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #000;
+}
 #form-submit {
     margin: 0 auto;
+}
+#find-recipe-types-form #form-submit {
+    margin: 1rem auto;
 }

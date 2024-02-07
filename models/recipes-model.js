@@ -62,7 +62,7 @@ export const editARecipe = async (recipeId, recipeObj) => {
 
 export const findRecipesByType = async (recipeTypeArr) => {
     try {
-        const recipes = await Recipe.find({ "type": { $in: recipeTypesArr }})
+        const recipes = await Recipe.find({ "type": { $in: recipeTypeArr }})
         console.log(recipes)
         return recipes;
     } catch (err) {

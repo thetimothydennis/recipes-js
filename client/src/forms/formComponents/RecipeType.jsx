@@ -1,3 +1,4 @@
+
 function RecipeType() {
 
     return (
@@ -41,7 +42,7 @@ function RecipeType() {
                     <input type="checkbox" name="sauces" id="sauces" className="form-field-input type-input" />
                 </div>
                 <div className="checkbox-container">
-                    <label htmlFor="breadsPastas" id="breadsPastas-label" className="form-field-label type-label">Breads and Pasts</label>
+                    <label htmlFor="breadsPastas" id="breadsPastas-label" className="form-field-label type-label">Breads and Pasta</label>
                     <input type="checkbox" name="breadsPastas" id="breadsPastas" className="form-field-input type-input" />
                 </div>
                 <div className="checkbox-container">

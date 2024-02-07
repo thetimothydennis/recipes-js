@@ -129,9 +129,7 @@ export const editRecipe = async (req, res) => {
 
 export const getRecipesOfTypes = async (req, res) => {
     try {
-        let typesArr = typeSelector(req.body);
-        const recipes = await recipeAPI.findRecipesByType(typesArr);
-        console.log(recipes);
+        const recipes = await recipeAPI.findRecipesByType(req.body.type);
         res.send(recipes);
     } catch (err) {
         console.log(err);
