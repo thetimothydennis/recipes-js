@@ -126,3 +126,15 @@ export const editRecipe = async (req, res) => {
         res.redirect("/");
     }
 }
+
+export const getRecipesOfTypes = async (req, res) => {
+    try {
+        let typesArr = typeSelector(req.body);
+        const recipes = await recipeAPI.findRecipesByType(typesArr);
+        console.log(recipes);
+        res.send(recipes);
+    } catch (err) {
+        console.log(err);
+        res.send(err.message);
+    }
+}

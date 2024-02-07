@@ -8,6 +8,7 @@ router.route("/api/recipes/add-recipe")
 
 router.route("/api/recipes")
     .get(recipesAPICtrl.getRecipes)
+    .post(recipesAPICtrl.getRecipesOfTypes)
 
 router.route("/api/recipes/:recipeid")
     .get(recipesAPICtrl.getRecipe)

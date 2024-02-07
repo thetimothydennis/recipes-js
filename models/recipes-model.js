@@ -59,3 +59,14 @@ export const editARecipe = async (recipeId, recipeObj) => {
         return err.message;
     }
 }
+
+export const findRecipesByType = async (recipeTypeArr) => {
+    try {
+        const recipes = await Recipe.find({ "type": { $in: recipeTypesArr }})
+        console.log(recipes)
+        return recipes;
+    } catch (err) {
+        console.log(err);
+        return err.message
+    }
+}
