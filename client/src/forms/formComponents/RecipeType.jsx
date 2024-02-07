@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 
-function RecipeType() {
+function RecipeType(props) {
 
     return (
         <div id="recipe-type-field" className="form-field">

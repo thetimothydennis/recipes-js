@@ -15,6 +15,7 @@ function EditRecipeForm ({recipeid}) {
     const [recipeTime, setRecipeTime] = useState("");
     const [recipeIngredients, setRecipeIngredients] = useState("");
     const [recipeSteps, setRecipeSteps] = useState("");
+    const [recipeTypes, setRecipeTypes] = useState([]);
 
     const getRecipeData = async () => {
         const recipe = await axios.get(`/api/recipes/${recipeid}`)
@@ -24,8 +25,15 @@ function EditRecipeForm ({recipeid}) {
         setRecipeTime(recipeData.time);
         setRecipeIngredients(recipeData.ingredients);
         setRecipeSteps(recipeData.steps);
+        setRecipeTypes(recipeData.type);
         return recipe.data;
     }
+
+    useEffect(() => {
+        for (let type of recipeTypes) {
+            document.getElementsByName(type)[0].checked = true;
+        }
+    }, [recipeTypes])
 
     useEffect(() => {
         getRecipeData();
@@ -38,7 +46,7 @@ function EditRecipeForm ({recipeid}) {
             <RecipeTime {...{recipeTime, setRecipeDescription}} />
             <RecipeIngredients {...{recipeIngredients, setRecipeIngredients}} />
             <RecipeSteps {...{recipeSteps, setRecipeSteps}} />
-            <RecipeType />
+            <RecipeType {...{recipeTypes}} />
             <SubmitButton />
         </form>
     )

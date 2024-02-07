@@ -38,7 +38,7 @@ function MainPage() {
         <div>
             <h2>All Recipes</h2>
             <a href="/add-recipe"><button>Add Recipe</button></a>
-            <FindByTypeForm {...{handleSubmit}} />
+            <FindByTypeForm {...{handleSubmit, getRecipes}} />
             <div id="recipe-cards-container" className="recipe-cards-container">
             {recipes.map((recipe, x) => (
                 <div onClick={handleClick} id={recipe._id} className="recipe-card" key={x}>
