@@ -11,6 +11,7 @@ function RecipeView(props) {
     const [recipeSteps, setRecipeSteps] = useState("");
     const [recipeIngredientsArray, setRecipeIngredientsArray] = useState([]);
     const [recipeStepsArray, setRecipeStepsArray] = useState([]);
+    const [recipeTypesArray, setRecipeTypesArray] = useState([]);
 
     const handleEditClick = () => {
         window.location = `/edit-recipe/${recipeid}`;
@@ -39,6 +40,7 @@ function RecipeView(props) {
             setRecipeTime(recipe.time);
             setRecipeIngredients(recipe.ingredients);
             setRecipeSteps(recipe.steps);
+            setRecipeTypesArray(recipe.type);
         }
     }, [recipe])
 
@@ -57,6 +59,9 @@ function RecipeView(props) {
                 <h1>{recipeName}</h1>
                 <a href="/"><button>Return to Index</button></a>
                 <h3>{recipeDescription}</h3>
+                <ul id="recipe-types" className="recipe-types">{recipeTypesArray.map((type, x) => (
+                    <li className="recipe-type" key={x}>{type.toUpperCase()}</li>
+                ))}</ul>
                 <h6>Time: {recipeTime}</h6>
                 <ul id="ingredients-list" className="ingredients-list">{recipeIngredientsArray.map((ingredient, x) => (
                     <li className="ingredients-list-item" key={x}>

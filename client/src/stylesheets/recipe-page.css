@@ -11,6 +11,17 @@
     background-color: #a00;
     display: none;
 }
+#recipe-types {
+    list-style: none;
+    font-size:1.75rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.recipe-type {
+    margin: 0 1rem;
+}
 
 @media screen and (max-width: 767px) {
     div#recipe-container {
