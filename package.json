@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "/usr/local/bin/nodemon /var/www/server.js",
-    "make": "bash ./scripts/make.sh",
+    "serve": "pm2 start server.js",
     "install": "bash ./scripts/install.sh",
-    "rebuild": "bash ./scripts/rebuild.sh",
-    "install-service": "bash ./scripts/install-linux-service.sh"
+    "kill": "bash pm2 stop server.js",
+    "logs": "bash pm2 logs server.js",
+    "pm2delete": "bash pm2 delete server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^3.0.3",
     "path": "^0.12.7",
+    "pm2": "^5.3.1",
     "url": "^0.11.3"
   },
   "type": "module"
