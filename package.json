@@ -8,7 +8,7 @@
     "make": "bash ./scripts/make.sh",
     "install": "bash ./scripts/install.sh",
     "rebuild": "bash ./scripts/rebuild.sh",
-    "install-service": "bash ./scripts/instal-linux-service.sh"
+    "install-service": "bash ./scripts/install-linux-service.sh"
   },
   "keywords": [],
   "author": "",
