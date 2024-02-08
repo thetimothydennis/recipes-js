@@ -1,8 +1,7 @@
 #!/bin/bash
 
-npm i
+npm run kill
 cd client
-npm i
 npm run build
 cd ..
-
+npm run serve

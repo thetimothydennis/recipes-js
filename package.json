@@ -6,9 +6,10 @@
   "scripts": {
     "serve": "pm2 start server.js",
     "install": "bash ./scripts/install.sh",
-    "kill": "bash pm2 stop server.js",
-    "logs": "bash pm2 logs server.js",
-    "pm2delete": "bash pm2 delete server.js"
+    "kill": "pm2 stop server.js",
+    "logs": "pm2 logs server.js",
+    "pm2delete": "pm2 delete server.js",
+    "rebuild": "bash ./scripts/rebuild.sh"
   },
   "keywords": [],
   "author": "",
