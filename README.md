@@ -1,5 +1,5 @@
 # Recipes-js
-** A MERN stack app for cataloging recipes. **
+**A MERN stack app for cataloging recipes.**
 
 ## Initialization
 Clone the repo to your local filesystem. 
