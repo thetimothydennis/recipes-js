@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serve": "nodemon server.js",
-    "setup": "bash ./scripts/setup.sh",
-    "rebuild": "bash ./scripts/rebuild.sh"
+    "serve": "/usr/local/bin/nodemon /var/www/server.js",
+    "make": "bash ./scripts/make.sh",
+    "install": "bash ./scripts/install.sh",
+    "rebuild": "bash ./scripts/rebuild.sh",
+    "install-service": "bash ./scripts/instal-linux-service.sh"
   },
   "keywords": [],
   "author": "",

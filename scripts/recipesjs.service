@@ -1,0 +1,30 @@
+[Unit]
+Dexcription=Recipes-js
+# repo - https://github.com/thetimothydennis/recipes-js
+# Author - Timothy Dennis
+
+[Service]
+# Start Service
+ExecStart=/usr/local/bin/nodemon /var/www/recipes_js/server.js
+
+# Options Stop and Restart
+# ExecStop=
+# ExecReload=
+
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+Restart=always
+# Restart=On-failure
+
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslogSyslogIdentifier=recipes-recipes_js
+
+# variables
+Environment=PATH=/usr/bin:/usr/local/bin
+# Environment=NODE_NEV=production
+# Environment=PORT=<application port>
+# Environment=MONGO_URI=<mongo connection string>
+
+[Install]
+WantedBy=multi-user.target
