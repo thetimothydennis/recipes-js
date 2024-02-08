@@ -43,6 +43,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1vw;
+}
+
 button, 
 input[type=submit] {
   border-radius: 8px;

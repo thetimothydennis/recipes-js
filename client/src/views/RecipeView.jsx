@@ -75,7 +75,7 @@ function RecipeView(props) {
         <div>
             { recipeSteps ? 
             <div id="recipe-container">
-                <h1>{recipeName}</h1>
+                <h2>{recipeName}</h2>
                 <a href="/"><button>Return to Index</button></a>
                 <h3>{recipeDescription}</h3>
                 <ul id="recipe-types" className="recipe-types">{normalizedTypes.map((type, x) => (

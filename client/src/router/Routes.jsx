@@ -6,12 +6,15 @@ import EditRecipePage from "../pages/EditRecipePage";
 
 function RoutesUI() {
     return (
-        <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/add-recipe" element={<AddRecipePage />} />
-            <Route path="/edit-recipe/:recipeid" element={<EditRecipePage />} />
-            <Route path="/recipes/:recipeid" element={<RecipePage />} />
-        </Routes>
+        <div>
+            <h1>Tasty Treats to Eat</h1>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/add-recipe" element={<AddRecipePage />} />
+                <Route path="/edit-recipe/:recipeid" element={<EditRecipePage />} />
+                <Route path="/recipes/:recipeid" element={<RecipePage />} />
+            </Routes>
+        </div>
     )
 }
 
