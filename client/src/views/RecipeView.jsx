@@ -12,10 +12,29 @@ function RecipeView(props) {
     const [recipeIngredientsArray, setRecipeIngredientsArray] = useState([]);
     const [recipeStepsArray, setRecipeStepsArray] = useState([]);
     const [recipeTypesArray, setRecipeTypesArray] = useState([]);
+    const [normalizedTypes, setNormalizedTypes] = useState([]);
 
     const handleEditClick = () => {
         window.location = `/edit-recipe/${recipeid}`;
     }
+
+    const normalizeType = (typeArr) => {
+        let normalized = []
+        for (let type of typeArr) {
+            if (type === "ingredientPrep") {
+                normalized.push("ingredient prep");
+            } else if (type === "breadsPastas") {
+                normalized.push("breads and pastas");
+            } else {
+                normalized.push(type)
+            }
+        }
+        return normalized;
+    }
+
+    useEffect(() => {
+        setNormalizedTypes(normalizeType(recipeTypesArray))
+    }, [recipeTypesArray])
 
     const handleDeleteClick = async (e) => {
         await axios.delete(`/api/recipes/${e.target.id}`);
@@ -59,7 +78,7 @@ function RecipeView(props) {
                 <h1>{recipeName}</h1>
                 <a href="/"><button>Return to Index</button></a>
                 <h3>{recipeDescription}</h3>
-                <ul id="recipe-types" className="recipe-types">{recipeTypesArray.map((type, x) => (
+                <ul id="recipe-types" className="recipe-types">{normalizedTypes.map((type, x) => (
                     <li className="recipe-type" key={x}>{type.toUpperCase()}</li>
                 ))}</ul>
                 <h6>Time: {recipeTime}</h6>
