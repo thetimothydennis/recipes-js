@@ -11,10 +11,15 @@ import { isMobile } from "react-device-detect";
     const [menuState, setMenuState] = useState(<></>)
 
     const handleOpenClick = () => {
+        let showHideBtn = document.getElementById("show-hide-types")
+        console.log(showHideBtn)
         if (!openState) {
             setOpenState(true)
+            showHideBtn.innerHTML = "Hide Recipe Types"
+
         } else if (openState) {
             setOpenState(false)
+            showHideBtn.innerHTML = "Show Recipe Types"
         }
     }
 
@@ -43,7 +48,7 @@ import { isMobile } from "react-device-detect";
     return (
         <div id="find-recipe-types">
             <div>
-            <button onClick={handleOpenClick}></button>
+            <button id="show-hide-types" className="form-field-input" onClick={handleOpenClick}>Show Recipe Types</button>
             {menuState}                
             </div>
           </div>

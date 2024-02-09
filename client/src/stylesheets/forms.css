@@ -67,8 +67,7 @@
     margin: 1rem auto;
     border: 0.125rem outset hsl(30, 90%, 50%);
     padding: 1rem;
-    padding-top: 0.125rem;
-    padding-top: 0;
+    padding-top: 0.75rem;
     max-width: 50vw;
 }
 #find-recipe-types-form {
@@ -94,6 +93,10 @@
     margin-top: 0.25rem;
 }
 #reset-filters-btn {
+    width: 30vw;
+    padding: auto;
+}
+#show-hide-types {
     width: 30vw;
     padding: auto;
 }
