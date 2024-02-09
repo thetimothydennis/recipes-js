@@ -35,6 +35,7 @@
     justify-content: center;
 }
 #recipe-type-field {
+    display: block;
     background-color: hsl(35, 50%, 55%);
     border-radius: 2rem;
     margin: 1rem auto;
@@ -99,5 +100,8 @@
 @media screen and (max-width: 767px) {
     #reset-filters-btn {
         width: 50vw;
+    }
+    #recipe-type-field {
+        height: 10vw
     }
 }
