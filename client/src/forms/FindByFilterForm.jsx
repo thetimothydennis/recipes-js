@@ -2,7 +2,6 @@ import RecipeType from "./formComponents/RecipeType";
 import { useState, useEffect } from "react";
 import SubmitButton from "./formComponents/SubmitButton";
 import "../stylesheets/forms.css";
-import { isMobile } from "react-device-detect";
 
 
  function FindByTypeForm({handleSubmit, getRecipes}) {
