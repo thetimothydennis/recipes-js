@@ -1,14 +1,16 @@
 #recipe-container {
-    background-color: #111;
+    background-color: hsl(200, 60%, 15%);
     border-radius: 1rem;
     padding: 2rem 4rem;
     margin: 2rem;
+    font-size: 1.4rem;
+    border: 0.125rem ridge hsl(200, 60%, 70%)
 }
 #ingredients-list, #recipe-steps-list {
     text-align: left;
 }
 .confirm-delete-btn {
-    background-color: #a00;
+    background-color: hsl(0, 100%, 55%);
     display: none;
 }
 #recipe-types {
