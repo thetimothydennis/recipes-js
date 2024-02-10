@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "../stylesheets/recipe-card.css";
 import FindByTypeForm from "../forms/FindByFilterForm";
+import SearchBox from "../components/SearchBox";
 
 function MainPage() {
     const [recipes, setRecipes] = useState([]);
@@ -38,6 +39,7 @@ function MainPage() {
         <div>
             <h2>All Recipes</h2>
             <a href="/add-recipe"><button>Add Recipe</button></a>
+            <SearchBox {...{setRecipes, getRecipes}} />
             <FindByTypeForm {...{handleSubmit, getRecipes}} />
             <div id="recipe-cards-container" className="recipe-cards-container">
             {recipes.map((recipe, x) => (
