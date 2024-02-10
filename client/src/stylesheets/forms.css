@@ -61,7 +61,7 @@
 .type-label {
     max-width: 12rem;
 }
-#find-recipe-types {
+#find-recipe-types, #recipe-search-box {
     background-color: hsl(35, 50%, 55%);
     border-radius: 2rem;
     margin: 1rem auto;
@@ -99,6 +99,14 @@
 #show-hide-types {
     width: 30vw;
     padding: auto;
+}
+#recipe-search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#recipe-search-box input {
+    width: 30vw;
 }
 @media screen and (max-width: 767px) {
     #reset-filters-btn {

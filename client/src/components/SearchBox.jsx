@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "../stylesheets/forms.css";
 
 function SearchBox (props) {
     const [searchValue, setSearchValue] = useState("");
@@ -28,9 +29,9 @@ function SearchBox (props) {
     }
 
     return (
-        <div id="recipe-search-box" className="form-input-field">
-            <label htmlFor="recipeSearch">Search by Name</label>
-            <input onChange={handleChange} value={searchValue} type="text" name="recipeSearch" />
+        <div id="recipe-search-box" className="form-field">
+            <label htmlFor="recipeSearch" id="recipe-name-search-label" className="form-field-label">Search by Name</label>
+            <input onChange={handleChange} value={searchValue} type="text" name="recipeSearch" id="recipe-search-name-input" className="form-field-input" />
             <button onClick={handleClear}>Clear Search</button>
         </div>
     )
