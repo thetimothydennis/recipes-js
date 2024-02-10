@@ -136,3 +136,13 @@ export const getRecipesOfTypes = async (req, res) => {
         res.send(err.message);
     }
 }
+
+export const searchRecipesByName = async (req, res) => {
+    try {
+        const recipes = await recipeAPI.findRecipesByName(req.query.name)
+        res.send(recipes)
+    } catch (err) {
+        console.log(err);
+        res.send(err.mesage);
+    }
+}

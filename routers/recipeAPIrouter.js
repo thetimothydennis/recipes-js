@@ -10,6 +10,9 @@ router.route("/api/recipes")
     .get(recipesAPICtrl.getRecipes)
     .post(recipesAPICtrl.getRecipesOfTypes)
 
+router.route("/api/searchrecipes?")
+    .get(recipesAPICtrl.searchRecipesByName)
+
 router.route("/api/recipes/:recipeid")
     .get(recipesAPICtrl.getRecipe)
     .delete(recipesAPICtrl.deleteRecipe)

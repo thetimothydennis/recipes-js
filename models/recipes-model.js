@@ -52,7 +52,6 @@ export const addARecipe = async (recipeObj) => {
 export const editARecipe = async (recipeId, recipeObj) => {
     try {
         const recipeToUpdate = await Recipe.findByIdAndUpdate(recipeId, recipeObj);
-        console.log(recipeToUpdate);
         return recipeToUpdate;
     } catch (err) {
         console.log(err);
@@ -63,10 +62,21 @@ export const editARecipe = async (recipeId, recipeObj) => {
 export const findRecipesByType = async (recipeTypeArr) => {
     try {
         const recipes = await Recipe.find({ "type": { $in: recipeTypeArr }})
-        console.log(recipes)
+
         return recipes;
     } catch (err) {
         console.log(err);
         return err.message
+    }
+}
+
+export const findRecipesByName = async (recipeNameStr) => {
+    try {
+        let regex = eval(`/.*${recipeNameStr}+.*/i`)
+        const recipes = await Recipe.find({ name: regex });
+        return recipes;
+    } catch (err) {
+        console.log(err);
+        return err.message;
     }
 }
