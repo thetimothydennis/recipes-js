@@ -93,6 +93,7 @@
     margin-top: 0.25rem;
 }
 #reset-filters-btn {
+    line-height: 1.5rem;
     width: 30vw;
     padding: auto;
 }
@@ -110,9 +111,10 @@
 }
 @media screen and (max-width: 767px) {
     #reset-filters-btn {
+        margin-top: 0.25rem;
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
         width: 50vw;
     }
-    #recipe-type-field {
-        height: 10vw
-    }
+    
 }
