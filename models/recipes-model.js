@@ -2,7 +2,7 @@ import { Recipe } from "./recipes-schema.js";
 
 export const getAllRecipes = async () => {
 	try {
-		const recipes = await Recipe.find({});
+		const recipes = await Recipe.find({}).sort({ name: "asc" });
 		return recipes;
 	} catch (err) {
 		console.log(err);
@@ -65,7 +65,7 @@ export const editARecipe = async (recipeId, recipeObj) => {
 
 export const findRecipesByType = async recipeTypeArr => {
 	try {
-		const recipes = await Recipe.find({ type: { $in: recipeTypeArr } });
+		const recipes = await Recipe.find({ type: { $in: recipeTypeArr } }).sort({ name: "asc" });
 
 		return recipes;
 	} catch (err) {
@@ -77,7 +77,7 @@ export const findRecipesByType = async recipeTypeArr => {
 export const findRecipesByName = async recipeNameStr => {
 	try {
 		let regex = eval(`/.*${recipeNameStr}+.*/i`);
-		const recipes = await Recipe.find({ name: regex });
+		const recipes = await Recipe.find({ name: regex }).sort({ name: "asc" });
 		return recipes;
 	} catch (err) {
 		console.log(err);
