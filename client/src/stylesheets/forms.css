@@ -1,120 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 .form-field {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .form-field-label {
-    margin: 0.25rem auto;
-    font-weight: 800;
-    font-size: 1.25rem;
+	margin: 0.25rem auto;
+	font-weight: 800;
+	font-size: 1.25rem;
 }
-.form-field textarea, .form-field input {
-    width: 50vw;
-    margin-bottom: 0.5rem;
-    background-color: hsl(30, 100%, 25%);
-    border: 0.125rem ridge hsl(30, 70%, 50%);
-    color: hsl(200, 90%, 80%);
-    font-weight: 600;
-    border-radius: 0.25rem;
-    line-height: 1.5rem;
-    font-size: 1.5rem;
+.form-field textarea,
+.form-field input {
+	width: 50vw;
+	margin: 0.5rem auto;
+	background-color: hsl(30, 100%, 25%);
+	border: 0.125rem ridge hsl(30, 70%, 50%);
+	color: hsl(200, 90%, 80%);
+	font-weight: 600;
+	border-radius: 0.25rem;
+	line-height: 1.5rem;
+	font-size: 1.5rem;
 }
 .recipe-form {
-    background-color: hsl(35, 50%, 50%);
-    color: hsl(200, 70%, 20%);
-    border: 0.125rem groove hsl(30, 50%, 50%);
-    border-radius: 1rem;
-    margin: 1.5rem auto;
-    padding: 1rem 3rem;
+	background-color: hsl(35, 50%, 50%);
+	color: hsl(200, 70%, 20%);
+	border: 0.125rem groove hsl(30, 50%, 50%);
+	border-radius: 1rem;
+	margin: 1.5rem auto;
+	padding: 1rem 3rem;
 }
 #recipe-types-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 50vw;
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 70vw;
+	justify-content: center;
 }
 #recipe-type-field {
-    display: block;
-    background-color: hsl(35, 50%, 55%);
-    border-radius: 2rem;
-    margin: 1rem auto;
-    padding-bottom: 0.5rem;
-    border: 0.125rem groove hsl(35, 60%, 60%)
+	display: block;
+	background-color: hsl(35, 50%, 55%);
+	border-radius: 2rem;
+	margin: 1rem auto;
+	padding-bottom: 0.5rem;
+	border: 0.125rem groove hsl(35, 60%, 60%);
 }
 .checkbox-container {
-    display: flex;
-    flex-direction: column;
-    background-color: hsl(35, 60%, 65%);
-    color: hsl(200, 70%, 20%);
-    border: 0.125rem groove hsl(30, 50%, 50%);
-    font-size: 1.25rem;
-    max-width: 15rem;
-    border-radius: 2rem;
-    margin: 0.25rem;;
-    padding: 0.25rem 0.75rem;;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: hsl(35, 60%, 65%);
+	color: hsl(200, 70%, 20%);
+	border: 0.125rem groove hsl(30, 50%, 50%);
+	font-size: 1.25rem;
+	max-width: 15rem;
+	border-radius: 2rem;
+	margin: 0.25rem;
+	padding: 0.25rem 0.75rem;
 }
 .type-input {
-    background-color: #da5;
-    max-width: 10rem;
+	background-color: #da5;
+}
+input[type="checkbox"] {
+	margin: 0.5rem auto;
 }
 .type-label {
-    max-width: 12rem;
+	max-width: 12rem;
 }
-#find-recipe-types, #recipe-search-box {
-    background-color: hsl(35, 50%, 55%);
-    border-radius: 2rem;
-    margin: 1rem auto;
-    border: 0.125rem outset hsl(30, 90%, 50%);
-    padding: 1rem;
-    padding-top: 0.75rem;
-    max-width: 50vw;
+#find-recipe-types,
+#recipe-search-box {
+	background-color: hsl(35, 50%, 55%);
+	border-radius: 2rem;
+	margin: 1rem auto;
+	border: 0.125rem outset hsl(30, 90%, 50%);
+	padding: 1rem;
+	padding-top: 0.75rem;
+	width: 50vw;
 }
 #find-recipe-types-form {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 1rem auto;
-    margin-top: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 1rem auto;
+	margin-top: 0;
 }
 #find-recipe-types-form #recipe-types-field {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 #reset-filters-btn {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 #form-submit {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 #find-recipe-types-form #form-submit {
-    margin: 1rem auto;
-    margin-bottom: 0;
-    margin-top: 0.25rem;
+	margin: 1rem auto;
+	margin-bottom: 0;
+	margin-top: 0.25rem;
 }
 #reset-filters-btn {
-    line-height: 1.5rem;
-    width: 30vw;
-    padding: auto;
+	line-height: 1.5rem;
+	width: 30vw;
+	padding: auto;
 }
 #show-hide-types {
-    width: 30vw;
-    padding: auto;
+	width: 30vw;
+	padding: auto;
 }
 #recipe-search-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #recipe-search-box input {
-    width: 30vw;
+	width: 30vw;
 }
 @media screen and (max-width: 767px) {
-    #reset-filters-btn {
-        margin-top: 0.25rem;
-        padding: 1rem 1.2rem;
-        font-size: 1rem;
-        width: 50vw;
-    }
-    
+	#reset-filters-btn {
+		margin-top: 0.25rem;
+		padding: 1rem 1.2rem;
+		font-size: 1rem;
+		width: 50vw;
+	}
+	#recipe-search-box input {
+		width: 70vw;
+	}
+	div#find-recipe-types,
+	#recipe-search-box {
+		width: 80vw;
+	}
 }

@@ -9,26 +9,26 @@ connect(MONGO_URI);
 const connection = createConnection(MONGO_URI);
 
 const RecipeSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    description: {
-        type: String
-    },
-    time: {
-        type: String
-    },
-    ingredients: {
-        type: String,
-        required: true
-    },
-    steps: {
-        type: String,
-        required: true
-    },
-    type: []
-})
+	name: {
+		type: String,
+		required: true,
+		unique: true,
+	},
+	description: {
+		type: String,
+	},
+	time: {
+		type: String,
+	},
+	ingredients: {
+		type: String,
+		required: true,
+	},
+	steps: {
+		type: String,
+		required: true,
+	},
+	type: [],
+});
 
 export const Recipe = connection.model("Recipes", RecipeSchema);

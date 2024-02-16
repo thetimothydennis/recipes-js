@@ -1,38 +1,39 @@
 #recipe-container {
-    background-color: hsl(200, 60%, 15%);
-    border-radius: 1rem;
-    padding: 2rem 4rem;
-    margin: 2rem;
-    font-size: 1.4rem;
-    border: 0.125rem ridge hsl(200, 60%, 70%)
+	background-color: hsl(200, 60%, 15%);
+	border-radius: 1rem;
+	padding: 2rem 4rem;
+	margin: 2rem;
+	font-size: 1.4rem;
+	border: 0.125rem ridge hsl(200, 60%, 70%);
 }
-#ingredients-list, #recipe-steps-list {
-    text-align: left;
+#ingredients-list,
+#recipe-steps-list {
+	text-align: left;
 }
 .confirm-delete-btn {
-    background-color: hsl(0, 100%, 55%);
-    display: none;
+	background-color: hsl(0, 100%, 55%);
+	display: none;
 }
 #recipe-types {
-    list-style: none;
-    font-size:1.75rem;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+	list-style: none;
+	font-size: 1.75rem;
+	font-weight: 500;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 .recipe-type {
-    margin: 0 1rem;
+	margin: 0 1rem;
 }
 
 @media screen and (max-width: 767px) {
-    div#recipe-container {
-        padding: 0.25rem;
-        margin: 0;
-    }
-    h6 {
-        font-size: 1rem;
-        margin: 0;
-        font-style: italic;
-    }
+	div#recipe-container {
+		padding: 0.25rem;
+		margin: 0;
+	}
+	h6 {
+		font-size: 1rem;
+		margin: 0;
+		font-style: italic;
+	}
 }

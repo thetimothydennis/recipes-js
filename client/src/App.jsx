@@ -1,12 +1,11 @@
-import RoutesRouter from "./router/BrowserRouter"
+import RoutesRouter from "./router/BrowserRouter";
 
 function App() {
-
-  return (
-    <div id="root-container">
-        <RoutesRouter />
-    </div>
-  )
+	return (
+		<div id='root-container'>
+			<RoutesRouter />
+		</div>
+	);
 }
 
-export default App
+export default App;
