@@ -68,7 +68,6 @@ export const findRecipesByType = async recipeTypeArr => {
 		const recipes = await Recipe.find({
 			type: { $in: recipeTypeArr },
 		}).sort({ name: "asc" });
-
 		return recipes;
 	} catch (err) {
 		console.log(err);

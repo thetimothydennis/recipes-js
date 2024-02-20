@@ -20,6 +20,9 @@
 	line-height: 1.5rem;
 	font-size: 1.5rem;
 }
+input.form-field-checkbox {
+	width: 10.5rem;
+}
 .recipe-form {
 	background-color: hsl(35, 50%, 50%);
 	color: hsl(200, 70%, 20%);

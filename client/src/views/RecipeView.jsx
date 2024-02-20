@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../stylesheets/forms.css";
 import axios from "axios";
 
 function RecipeView(props) {
@@ -10,9 +11,11 @@ function RecipeView(props) {
 	const [recipeIngredients, setRecipeIngredients] = useState("");
 	const [recipeSteps, setRecipeSteps] = useState("");
 	const [recipeIngredientsArray, setRecipeIngredientsArray] = useState([]);
+	const [qtyIngredientsArray, setQtyIngredientsArray] = useState([]);
 	const [recipeStepsArray, setRecipeStepsArray] = useState([]);
 	const [recipeTypesArray, setRecipeTypesArray] = useState([]);
 	const [normalizedTypes, setNormalizedTypes] = useState([]);
+	const [recipeQty, setRecipeQty] = useState(1);
 
 	const handleEditClick = () => {
 		window.location = `/edit-recipe/${recipeid}`;
@@ -35,6 +38,10 @@ function RecipeView(props) {
 	useEffect(() => {
 		setNormalizedTypes(normalizeType(recipeTypesArray));
 	}, [recipeTypesArray]);
+
+	const handleQtyChange = e => {
+		setRecipeQty(e.target.value);
+	};
 
 	const handleDeleteClick = async e => {
 		await axios.delete(`/api/recipes/${e.target.id}`);
@@ -68,6 +75,22 @@ function RecipeView(props) {
 	}, [recipeIngredients]);
 
 	useEffect(() => {
+		let newIngredientsArray = [];
+		for (let ingredient of recipeIngredientsArray) {
+			let array = ingredient.split(" -- ");
+			if (array[0] > 0) {
+				array[0] = eval(array[0]) * recipeQty;
+				array[0].toPrecision(3).toString();
+			} else {
+				array[0] = ""
+			}
+			let joined = array.join(" ");
+			newIngredientsArray.push(joined)
+		}
+		setQtyIngredientsArray(newIngredientsArray);
+	}, [recipeIngredientsArray, recipeQty])
+
+	useEffect(() => {
 		setRecipeStepsArray(recipeSteps.split("\r\n"));
 	}, [recipeSteps]);
 
@@ -88,8 +111,21 @@ function RecipeView(props) {
 						))}
 					</ul>
 					<h6>Time: {recipeTime}</h6>
+					<div id="recipe-qty-input" className="form-field">
+						<label className="form-field-label" htmlFor='recipeQty' >Recipe Quantity</label>
+						<input
+							id='recipe-qty'
+							type='number'
+							step="0.5"
+							min="0.5"
+							name='recipeQty'
+							className='form-field-input'
+							onChange={handleQtyChange}
+							value={recipeQty}
+						/>
+					</div>
 					<ul id='ingredients-list' className='ingredients-list'>
-						{recipeIngredientsArray.map((ingredient, x) => (
+						{qtyIngredientsArray.map((ingredient, x) => (
 							<li
 								className='ingredients-list-item'
 								key={x}>

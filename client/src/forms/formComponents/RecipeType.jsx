@@ -16,7 +16,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='breakfast'
 						id='breakfast'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -30,7 +30,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='appetizer'
 						id='appetizer'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -44,7 +44,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='soup'
 						id='soup'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -58,7 +58,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='entree'
 						id='entree'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -72,7 +72,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='side'
 						id='side'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -86,7 +86,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='beverage'
 						id='beverage'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -100,7 +100,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='dessert'
 						id='dessert'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -114,7 +114,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='salad'
 						id='salad'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -128,7 +128,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='sauces'
 						id='sauces'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -142,7 +142,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='breadsPastas'
 						id='breadsPastas'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -156,7 +156,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='meats'
 						id='meats'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 				<div className='checkbox-container'>
@@ -170,7 +170,7 @@ function RecipeType(props) {
 						type='checkbox'
 						name='ingredientPrep'
 						id='ingredientPrep'
-						className='form-field-input type-input'
+						className='form-field-checkbox type-input'
 					/>
 				</div>
 			</div>
